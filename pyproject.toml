@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pybackpack"
+dynamic = ["version"]
+authors = [
+  { name="Pooya Vahidi" },
+]
+description = "A collection of utilities and tools in Python."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/pooyavahidi/pybackpack"
+Issues = "https://github.com/pooyavahidi/pybackpack/issues"
+
+[tool.setuptools.dynamic]
+version = {file = "VERSION"}
+
+[tool.pytest.ini_options]
+addopts = "-s -p no:warnings"

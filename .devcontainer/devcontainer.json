@@ -1,0 +1,20 @@
+{
+  "name": "vscode_pybackpack",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "ms-python.pylint"
+      ]
+    }
+  },
+  "remoteEnv": {
+    "REDIS_URL": "redis://redis:6379",
+    "MONGODB_URL": "mongodb://mongo:27017"
+  }
+}
