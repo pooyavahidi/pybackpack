@@ -354,7 +354,7 @@ class AsyncAdapterCommand(AsyncCommand):
             asynchronous command.
     """
 
-    def __init__(self, command: AsyncCommand):
+    def __init__(self, command: Command):
         self.command = command
 
     async def async_run(
@@ -373,7 +373,7 @@ class SyncAdapterCommand(Command):
 
     """
 
-    def __init__(self, command: Command):
+    def __init__(self, command: AsyncCommand):
         self.command = command
 
     def run(self, input_data: Optional[Any] = None) -> CommandResult:
