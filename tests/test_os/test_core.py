@@ -1,5 +1,4 @@
 import pytest
-import pytest
 from pybackpack.os import ProcessCommand, run_shell_command
 from pybackpack.commands import (
     PipeCommand,
@@ -12,7 +11,7 @@ from pybackpack.commands import (
 
 def test_shell_command():
     cmd = ProcessCommand(["echo", "Hello"])
-    res = cmd.run()
+    res = run_command(cmd)
     assert res.output == "Hello\n"
     assert res.metadata.returncode == 0
 
