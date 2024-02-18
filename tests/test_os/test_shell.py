@@ -46,6 +46,11 @@ def test_get_files(test_dir):
     assert len(files) == 4
     assert {"file3.txt", "file4.py"} not in {file.name for file in files}
 
+    # Get all the yaml files only, using two separate patterns
+    files = get_files(base_dir, names=[r".*\.yaml$", r".*\.yml$"])
+    assert len(files) == 4
+    assert {"file3.txt", "file4.py"} not in {file.name for file in files}
+
     # Get all the files except txt and py files
     files = get_files(base_dir, exclude_names=[r".*\.txt", r".*\.py"])
     assert len(files) == 5
